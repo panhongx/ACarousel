@@ -232,7 +232,7 @@ extension ACarouselViewModel {
 extension ACarouselViewModel {
     /// drag gesture of view
     var dragGesture: some Gesture {
-        DragGesture()
+        DragGesture(minimumDistance: 20)
             .onChanged(dragChanged)
             .onEnded(dragEnded)
     }
@@ -272,7 +272,7 @@ extension ACarouselViewModel {
         /// At the end of the drag, if the drag value exceeds the drag threshold,
         /// the active view will be toggled
         /// default is one third of subview
-        let dragThreshold: CGFloat = itemWidth / 3
+        let dragThreshold: CGFloat = 60
         
         var activeIndex = self.activeIndex
         if value.translation.width > dragThreshold {
