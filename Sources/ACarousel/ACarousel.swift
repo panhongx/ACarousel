@@ -32,7 +32,7 @@ public struct ACarousel<Data, ID, Content> : View where Data : RandomAccessColle
         GeometryReader { proxy -> AnyView in
             viewModel.viewSize = proxy.size
             return AnyView(generateContent(proxy: proxy))
-        }.clipped()
+        }
     }
     
     private func generateContent(proxy: GeometryProxy) -> some View {
